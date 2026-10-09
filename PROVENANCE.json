@@ -1,0 +1,16 @@
+{
+  "schema_version": "stateaxis-mod-provenance/v1",
+  "source_repository": "Qixin-Gaoke/stateaxis",
+  "source_commit": "7562b5fa6f42e2e045a877b53ac934739e2cf230",
+  "source_issues": [
+    17,
+    107,
+    215,
+    258
+  ],
+  "source_evidence": "docs/history/reports/ISSUE107_TYPED_STATE_GROUP_FOUNDATION_20260816.md",
+  "copied_evidence": "evidence/ISSUE107_TYPED_STATE_GROUP_FOUNDATION_20260816.md",
+  "copied_evidence_sha256": "c2fdde37db984475c704f470f783da57cb29095b656b1cadd0d7946f9dd5b449",
+  "qualification_inherited": false,
+  "implementation_extracted": false
+}
