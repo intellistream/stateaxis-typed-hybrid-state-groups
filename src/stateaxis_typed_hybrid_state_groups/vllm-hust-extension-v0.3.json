@@ -1,56 +1,53 @@
 {
   "schema_version": "0.3-experimental",
   "extension_id": "org.vllm-hust.stateaxis-typed-hybrid-state-groups",
-  "extension_version": "0.1.0.dev0",
-  "kind": "in_process_plugin",
-  "host": {
-    "provider": "stateaxis",
-    "name": "stateaxis",
-    "version_range": ">=1,<2",
-    "api_range": ">=1,<2"
-  },
-  "runtime": {
-    "type": "python",
-    "process_scope": "stateaxis-process",
-    "isolation": "trusted_in_process"
-  },
+  "extension_version": "0.2.0",
+  "kind": "runtime_bridge",
+  "host": {"provider": "stateaxis", "name": "stateaxis", "version_range": ">=1,<2", "api_range": ">=1,<2"},
+  "runtime": {"type": "python", "process_scope": "stateaxis-process", "isolation": "trusted_in_process"},
   "lifecycle_owner": "vllm",
-  "protocols": [
-    {
-      "name": "stateaxis.mod-proposal.typed-hybrid-state-groups",
-      "version_range": ">=1,<2"
-    }
-  ],
-  "implementation": [
-    {
-      "type": "python_module",
-      "module": "stateaxis_typed_hybrid_state_groups",
-      "object": "StateaxisTypedHybridStateGroupsContractProposal",
-      "status": "import_only"
-    }
-  ],
+  "protocols": [{"name": "stateaxis.mod-proposal.typed-hybrid-state-groups", "version_range": ">=1,<2"}],
+  "implementation": [{"type": "host_builtin", "symbol": "statecentric_engine:parse_typed_hybrid_state_groups_additional_config", "status": "active"}],
   "requires_services": [],
   "requires_extensions": [],
-  "resource_claims": [],
-  "components": [
-    {
-      "component_id": "stateaxis-typed-hybrid-state-groups",
-      "contracts": [
-        "vllm.stateaxis.mod-proposal.typed-hybrid-state-groups.v1"
-      ],
-      "execution_planes": [
-        "scheduler",
-        "worker",
-        "device"
-      ],
-      "isolation": "trusted_in_process",
-      "implementation_ref": "stateaxis_typed_hybrid_state_groups:StateaxisTypedHybridStateGroupsContractProposal",
-      "permissions": []
-    }
-  ],
+  "resource_claims": [{"resource": "stateaxis.native.typed-state-group-authority", "scope": "stateaxis-process", "mode": "exclusive"}],
+  "components": [{
+    "component_id": "stateaxis-typed-hybrid-state-groups",
+    "contracts": ["vllm.stateaxis.mod-proposal.typed-hybrid-state-groups.v1"],
+    "execution_planes": ["scheduler", "worker", "device"],
+    "isolation": "trusted_in_process",
+    "implementation_ref": "stateaxis_typed_hybrid_state_groups:typed_hybrid_state_groups",
+    "permissions": []
+  }],
   "activation": {
-    "entry_points": [],
+    "entry_points": [{"group": "stateaxis.mod_handlers", "name": "typed_hybrid_state_groups"}],
     "environment": {},
-    "additional_config": {}
+    "additional_config": {
+      "stateaxis_typed_hybrid_state_groups": {
+        "enabled": true,
+        "model_family": "qwen38",
+        "wire_schema_version": 1,
+        "plan_identity_sha256": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+        "recurrent_groups": 1,
+        "full_kv_groups": 1,
+        "recurrent_layer_count": 48,
+        "full_kv_layer_count": 16,
+        "recurrent_bytes_per_state": 38486016,
+        "full_kv_bytes_per_token": 16384,
+        "atomic_cohort_publication": true,
+        "joint_admission": true,
+        "generation_qualified_release": true,
+        "recurrent_copy_on_write": true,
+        "immutable_kv_sharing": true,
+        "snapshot_capture_required": true,
+        "fail_closed": true
+      },
+      "stateaxis_mod": {
+        "mod_id": "org.vllm-hust.stateaxis-typed-hybrid-state-groups",
+        "version": "0.2.0",
+        "manifest_sha256": "2d307fa569cef54eac58312bb5aadf72d40ff25be5f986225624e03187c81431",
+        "performance_qualified": false
+      }
+    }
   }
 }

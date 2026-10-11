@@ -2,41 +2,62 @@
 
 Extension ID: `org.vllm-hust.stateaxis-typed-hybrid-state-groups`
 
-Typed full-KV, sliding-window and recurrent state groups with atomic cohort lifecycle.
+This active experimental MOD is the independently reviewable authority contract
+for StateAxis typed recurrent and full-KV state groups. Shuhao Zhang (Tony) is
+directly responsible; no advisor is declared.
 
-This repository is the independent MOD boundary for StateAxis issues [#17](https://github.com/Qixin-Gaoke/stateaxis/issues/17), [#107](https://github.com/Qixin-Gaoke/stateaxis/issues/107), [#215](https://github.com/Qixin-Gaoke/stateaxis/issues/215), [#258](https://github.com/Qixin-Gaoke/stateaxis/issues/258).
-It is deliberately `import_only`, default-off, and cannot be enabled. The split does
-not inherit correctness, device, performance, or publication qualification from the
-aggregate StateAxis repository.
+The reviewed Qwen3.8 plan contains one 48-layer recurrent group and one 16-layer
+full-KV group. It requires atomic cohort publication, joint admission,
+generation-qualified release, recurrent copy-on-write, immutable KV sharing,
+snapshot capture and fail-closed handling. The mechanism itself remains in the
+StateAxis Host; this repository pins the exact policy and research identity that
+may activate it.
 
-## Evidence boundary
+## Activation
 
-Status: **foundation**.
-
-CPU, wire and fault gates exist; real-device exactness, recovery and capacity benefit remain unqualified.
-
-The copied evidence and its SHA-256 are recorded in `PROVENANCE.json`. Negative,
-failed, and inconclusive results are retained. Microbenchmarks and component results
-must not be restated as online end-to-end gains.
-
-## Install and inspect
+Activation is default-off and must go through vLLM-HUST Extension Manager/ECPA:
 
 ```bash
 python -m pip install .
-vllm-hust-ext extension inspect org.vllm-hust.stateaxis-typed-hybrid-state-groups
-vllm-hust-ext extension check org.vllm-hust.stateaxis-typed-hybrid-state-groups
+VLLM_HUST_EXT_CONFIG=evidence/ecpa-contract-20261011/manager-config.json \
+  vllm-hust-ext extension check \
+  org.vllm-hust.stateaxis-typed-hybrid-state-groups
+VLLM_HUST_EXT_CONFIG=evidence/ecpa-contract-20261011/manager-config.json \
+  vllm-hust-ext extension plan \
+  org.vllm-hust.stateaxis-typed-hybrid-state-groups
 ```
 
-Discovery does not enable the MOD. A future active revision must extract an
-independently reviewable implementation, declare exclusive resources where needed,
-and pass exactness, lifecycle, release, failure-recovery, and matched real-online
-gates.
+StateAxis rejects direct `STATECENTRIC_QWEN38_STATE_GROUP_PLAN_SHA256`
+activation. The Host validates this MOD's version and research-manifest SHA-256,
+then clears inherited worker authority and injects only the validated plan
+identity.
+
+Rollback is to disable or forget the extension in Extension Manager. Contract
+check then reports OFF, while real release/reuse execution refuses to start
+without ECPA authority.
+
+## Evidence boundary
+
+Status: **software foundation and real worker path; device unqualified**.
+
+The active contract has matched OFF/ON process evidence. StateAxis also has a
+real worker probe for typed plan submission, capacity fill, source release,
+sole-slot replacement, stale operation rejection, canonical snapshot comparison
+and final resource reclamation. The active revision has no admitted accelerator
+run. HyStateBench contains a preregistered workload contract but no online
+results. No latency, throughput, HBM-capacity, independent exactness or recovery
+benefit is claimed.
+
+See [EVIDENCE.md](EVIDENCE.md) and
+`evidence/ecpa-contract-20261011/RESULT.json`. Negative, failed and inconclusive
+results are retained and must not be restated as end-to-end gains.
 
 ## Validate
 
 ```bash
 python -m pip install -e '.[test]'
+ruff check .
+ruff format --check .
 pytest -q
+python -m build
 ```
-
-Maintainer: Shuhao Zhang (Tony), directly responsible; no advisor is declared.

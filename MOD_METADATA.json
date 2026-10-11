@@ -16,14 +16,16 @@
     "advisors": []
   },
   "lifecycle": {
-    "status": "experimental",
+    "status": "active_experimental",
     "default_enabled": false,
-    "activation_contract": "Import-only research descriptor; activation is refused until the StateAxis host contract and independent implementation are reviewed.",
-    "rollback_contract": "Disable or forget the descriptor and run the unchanged StateAxis host without this MOD."
+    "activation_contract": "Manifest 0.3 activation is owned by vLLM-HUST Extension Manager/ECPA. StateAxis accepts only the exact version 0.2.0 research-manifest hash, Qwen3.8 geometry and fail-closed lifecycle policy, and clears inherited worker authority before injecting the validated plan identity.",
+    "rollback_contract": "Disable or forget the extension in Extension Manager configuration. The probe then reports OFF in contract-check mode and refuses real execution without ECPA authority."
   },
   "scope": {
     "mechanism": "typed_transactional_hybrid_state_groups",
-    "supported_workloads": [],
+    "supported_workloads": [
+      "Qwen3.8 TP4 recurrent plus full-KV state lifecycle release/reuse probe"
+    ],
     "out_of_scope": [
       "general performance claims",
       "automatic inheritance from StateAxis aggregate evidence"
@@ -31,13 +33,13 @@
   },
   "evidence": {
     "qualification": "unqualified",
-    "latest_result": "evidence/ISSUE107_TYPED_STATE_GROUP_FOUNDATION_20260816.md",
+    "latest_result": "evidence/ecpa-contract-20261011/RESULT.json",
     "index": "EVIDENCE.md",
     "performance_claims": [
       {
-        "label": "no-performance-claim",
-        "scope": "frozen StateAxis source evidence only",
-        "result": "CPU, wire and fault gates exist; real-device exactness, recovery and capacity benefit remain unqualified."
+        "label": "software-foundation-and-real-worker-path-device-unqualified",
+        "scope": "Qwen3.8 typed recurrent/full-KV lifecycle",
+        "result": "The active ECPA/Host contract and real worker probe path are verified in software. No admitted real-device or online performance result exists, so no speedup, capacity, exactness or recovery qualification is claimed."
       }
     ]
   }
