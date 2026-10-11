@@ -1,0 +1,58 @@
+{
+  "schema_version": "stateaxis-mod-on-off/v1",
+  "date_utc": "2026-10-11",
+  "mod_id": "org.vllm-hust.stateaxis-typed-hybrid-state-groups",
+  "mod_version": "0.2.0",
+  "research_manifest_sha256": "2d307fa569cef54eac58312bb5aadf72d40ff25be5f986225624e03187c81431",
+  "evidence_label": "software-foundation-and-real-worker-path-device-unqualified",
+  "performance_qualified": false,
+  "host": {
+    "repository": "Qixin-Gaoke/stateaxis",
+    "pull_request": 511,
+    "merge_commit": "f66cdb758bca06e42dbb40237b57d04cc241273b",
+    "activation_mode": "active_experimental",
+    "direct_environment_activation_rejected": true,
+    "worker_environment_inheritance_cleared": true,
+    "real_worker_entry": "native_npu_release_reuse_probe"
+  },
+  "manager": {
+    "provider": "stateaxis",
+    "manifest_schema": "0.3-experimental",
+    "check": "passed_with_expected_experimental_degradation",
+    "plan": "passed",
+    "dry_run": "passed",
+    "managed_contract_check_process": "passed",
+    "matched_off_contract_check": "passed",
+    "matched_on_contract_check": "passed"
+  },
+  "reviewed_plan": {
+    "model_family": "qwen38",
+    "wire_schema_version": 1,
+    "plan_identity_sha256": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+    "recurrent_groups": 1,
+    "full_kv_groups": 1,
+    "recurrent_layer_count": 48,
+    "full_kv_layer_count": 16,
+    "recurrent_bytes_per_state": 38486016,
+    "full_kv_bytes_per_token": 16384
+  },
+  "validation": {
+    "python_tests": "2 passed",
+    "ruff_check": "passed",
+    "ruff_format_check": "passed",
+    "rust_library_tests": "422 passed",
+    "probe_tests": "4 passed",
+    "cargo_check_lib_probe": "passed",
+    "extension_manager_check_plan_dry_run": "passed",
+    "managed_contract_check_process": "passed",
+    "matched_contract_processes": "passed",
+    "direct_environment_rejection": "passed",
+    "execution_without_ecpa_rejection": "passed"
+  },
+  "limitations": [
+    "the active revision has no admitted real-device execution result",
+    "HyStateBench has a preregistered workload contract but no online results",
+    "real-device exactness, failure recovery, HBM capacity and matched performance remain unqualified",
+    "the fixed a5 plan digest is an experimental evidence fixture, not a deployment identity"
+  ]
+}

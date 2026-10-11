@@ -1,7 +1,7 @@
 {
   "schema_version": "stateaxis-mod-provenance/v1",
   "source_repository": "Qixin-Gaoke/stateaxis",
-  "source_commit": "7562b5fa6f42e2e045a877b53ac934739e2cf230",
+  "source_commit": "f66cdb758bca06e42dbb40237b57d04cc241273b",
   "source_issues": [
     17,
     107,
@@ -12,7 +12,7 @@
   "copied_evidence": "evidence/ISSUE107_TYPED_STATE_GROUP_FOUNDATION_20260816.md",
   "copied_evidence_sha256": "c2fdde37db984475c704f470f783da57cb29095b656b1cadd0d7946f9dd5b449",
   "qualification_inherited": false,
-  "implementation_extracted": false,
+  "implementation_extracted": true,
   "licensing": {
     "scaffolding": "Apache-2.0",
     "copied_evidence": "No additional license grant is inferred from this split."
