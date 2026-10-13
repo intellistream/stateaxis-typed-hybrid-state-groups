@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "integration_version": "0.3.0.dev43",
+  "parent_stateaxis_commit": "ed60f04b823a7c166af4f51bc83b03aeba8927b4",
+  "implementation_commit": "4ba85b48a7fc83a1f573ee4a4c7727cd2bf8fe4a",
+  "version_record": "runtime-integrations/versions/0.3.0.dev43.json",
+  "status": "ecpa-independent-repositories-lifecycle-validated-performance-unqualified",
+  "stateaxis_owned_runtime": true,
+  "source_repository_runtime_dependency": false,
+  "external_baselines_manifest": "runtime-integrations/external-baselines.json",
+  "owned_runtime_sources_manifest": "runtime-integrations/owned-runtime-sources.json",
+  "owned_runtime_sources": {
+    "vllm": {"path": "runtime/stateaxis-core", "tree": "24648997771bc848fce5fcf622d762fe899f9e1b"},
+    "vllm-ascend": {"path": "mods/stateaxis-ascend", "tree": "1486dd94e98559a7cfe5d878bd1848ad31c9c475"}
+  },
+  "mod_repositories_manifest": "mods/ecpa-repositories.json",
+  "split_repository_identity_qualified": true,
+  "ecpa_lifecycle_qualified": true,
+  "build_source_closure_qualified": false,
+  "runtime_image_qualified": false,
+  "performance_qualified": false,
+  "real_device_smoke_qualified": false,
+  "evidence": {
+    "split_lifecycle_summary": "/data/stateaxis-ecpa-repo-split-20260928-r001/ecpa-lifecycles/SUMMARY.json",
+    "split_lifecycle_summary_sha256": "3a14b3fe7e7eece0024b213db6453db0b3a1eaf16a51daff22712c6e2de4294e",
+    "evidence_label": "repository-identity-and-local-ecpa-lifecycle-only",
+    "historical_functional_summary": "/data/statecentric-builds/stateaxis-ecpa-real-seven-20260927-r001/FUNCTIONAL_SUMMARY.json",
+    "historical_functional_summary_sha256": "84902fb4a41639432e261545b0062359d51ba19b5b1bb55c40d6bdb9881fabf3",
+    "historical_performance_summary": "/data/statecentric-builds/stateaxis-ecpa-seven-performance-20260928-r001/PERFORMANCE_SUMMARY.json",
+    "historical_performance_summary_sha256": "08f7032ceb48eb3e90346b63e1f597f9b2491b98273fa39bf86763075c6ed857",
+    "historical_evidence_scope": "aggregate repository f4e4a87bb56b553961adee5aab6e6d0ba588071c only",
+    "performance_qualified": false,
+    "management_gap": "issue #360: generic state-fork request activation is not yet exclusively gated by an active ECPA binding"
+  },
+  "runtime_image": null,
+  "vendor_gitlinks": {
+    "mods/stateaxis-ascend/csrc/third_party/catlass": {"repository": "https://gitcode.com/cann/catlass.git", "commit": "41bf90da655bba3c66d0acd7e00abe33960ecfd6"}
+  }
+}

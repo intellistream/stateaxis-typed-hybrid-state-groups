@@ -38,15 +38,19 @@ without ECPA authority.
 
 ## Evidence boundary
 
-Status: **software foundation and real worker path; device unqualified**.
+Status: **software foundation and real worker path; current formal device run
+blocked and performance unqualified**.
 
 The active contract has matched OFF/ON process evidence. StateAxis also has a
 real worker probe for typed plan submission, capacity fill, source release,
 sole-slot replacement, stale operation rejection, canonical snapshot comparison
 and final resource reclamation. The active revision has no admitted accelerator
 run. HyStateBench contains a preregistered workload contract but no online
-results. No latency, throughput, HBM-capacity, independent exactness or recovery
-benefit is claimed.
+results. The current audit additionally proves that current StateAxis cannot
+freeze a plan from its stale candidate integration identity and that this
+container exposes only two of the required four devices. Historical four-device
+admission receipts are expired and contain no campaign. No latency, throughput,
+HBM-capacity, independent exactness or recovery benefit is claimed.
 
 See [EVIDENCE.md](EVIDENCE.md) and
 `evidence/ecpa-contract-20261011/RESULT.json`. Negative, failed and inconclusive
