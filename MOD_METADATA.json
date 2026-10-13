@@ -33,14 +33,19 @@
   },
   "evidence": {
     "qualification": "unqualified",
-    "latest_result": "evidence/ecpa-contract-20261011/RESULT.json",
+        "latest_result": "evidence/hystatebench-current-blocker-20261013/RESULT.json",
     "index": "EVIDENCE.md",
     "performance_claims": [
-      {
-        "label": "software-foundation-and-real-worker-path-device-unqualified",
-        "scope": "Qwen3.8 typed recurrent/full-KV lifecycle",
-        "result": "The active ECPA/Host contract and real worker probe path are verified in software. No admitted real-device or online performance result exists, so no speedup, capacity, exactness or recovery qualification is claimed."
-      }
+            {
+                "label": "software-foundation-and-real-worker-path-device-unqualified",
+                "scope": "Qwen3.8 typed recurrent/full-KV lifecycle",
+                "result": "The active ECPA/Host contract and real worker probe path are verified in software. No admitted real-device or online performance result exists, so no speedup, capacity, exactness or recovery qualification is claimed."
+            },
+            {
+                "label": "matched-online-not-run-current-environment-blocked",
+                "scope": "HyStateBench 1.2 Qwen3.8-27B BF16 TP4PP1, physical NPU4-7, three paired lifecycles",
+                "result": "Current plan expansion fails closed because the candidate integration record does not bind current owned-runtime trees. The container exposes only NPU4-5 and has no immutable-image launcher. Historical four-device admission receipts are expired and no campaign exists. No performance number is available or inferred."
+            }
     ]
   }
 }

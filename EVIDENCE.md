@@ -2,6 +2,10 @@
 
 ## Active revision
 
+- `evidence/hystatebench-current-blocker-20261013/RESULT.json`: current formal
+  execution audit. The plan fails closed on stale owned-runtime identity, only
+  two of the required four devices are visible, and the immutable-image launcher
+  is unavailable. This is an explicit reproducible blocker, not performance.
 - `evidence/ecpa-contract-20261011/RESULT.json`: matched Extension Manager and
   StateAxis Host activation contract for version 0.2.0. This is non-performance
   process and software evidence; real-device qualification is still absent.
@@ -16,4 +20,6 @@
   superseded as the latest activation record.
 
 HyStateBench is preregistered in StateAxis but currently contains no online or
-device result. No item in this repository qualifies a performance benefit.
+device result. Historical admission-ready receipts are expired readiness
+records bound to obsolete identities and are not results. No item in this
+repository qualifies a performance benefit.

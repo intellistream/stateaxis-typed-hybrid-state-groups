@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "format": "stateaxis-typed-hybrid-state-groups-current-blocker-v1",
+  "captured_at_utc": "2026-10-13T00:14:57Z",
+  "evidence_label": "matched_online_not_run_current_environment_blocked",
+  "performance_claim": false,
+  "device_execution": false,
+  "mod_repository_commit": "8e962e7e98ab75c0baa0521ba05cb793aa4b25c9",
+  "stateaxis": {
+    "repository": "Qixin-Gaoke/stateaxis",
+    "commit": "16f6c9178c4a7820b4175e34829fa357e6c9ba80",
+    "dirty": false,
+    "contract_sha256": "cfc3991542a829281a4ff906a13844e3028a039fc4898a57be1cafe85003510b",
+    "prompt_selection_sha256": "f335ef4700465e29fc1b7d145bf540e1fec4392c2de52e68366b57c5846413f8",
+    "candidate_integration_sha256": "7768011244810bb2bb9b77d844740ef598911fec170499a8763ceff3f42bf761"
+  },
+  "required_campaign": {
+    "model": "Qwen3.8-27B",
+    "model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "dtype": "BF16",
+    "graph_mode": "graph",
+    "topology": "TP4PP1",
+    "physical_devices": [4, 5, 6, 7],
+    "minimum_paired_lifecycles": 3,
+    "arms": ["stateaxis-base1", "candidate"],
+    "case_count": 308
+  },
+  "current_environment": {
+    "visible_device_nodes": ["davinci4", "davinci5", "davinci_manager"],
+    "visible_accelerators": 2,
+    "accelerator_model": "Ascend 910B2",
+    "visible_physical_devices": [4, 5],
+    "required_physical_devices_visible": false,
+    "sudo_available": false,
+    "docker_available": false,
+    "model_present": true,
+    "dataset_present": true,
+    "prompt_selection_present": true
+  },
+  "current_plan_expansion": {
+    "attempted": true,
+    "exit_status": 2,
+    "error": "checked-out owned runtime tree differs: vllm",
+    "candidate_integration_version": "0.3.0.dev43",
+    "candidate_expected_vllm_tree": "24648997771bc848fce5fcf622d762fe899f9e1b",
+    "current_vllm_tree": "3a401e7bd6098b607bca00a2c0df6a802875928f",
+    "candidate_expected_vllm_ascend_tree": "1486dd94e98559a7cfe5d878bd1848ad31c9c475",
+    "current_vllm_ascend_tree": "e9d4403f3d32f8dc2040a77b0cfa11d574ae517b"
+  },
+  "historical_admission": {
+    "classification": "readiness_only_not_performance",
+    "producer_commit": "c799b939a6e04097c6b9253f7f7209184418782f",
+    "integration_version": "0.3.0.dev15",
+    "authorization_expired_at": "2026-09-21T21:21:38.141582+00:00",
+    "r001_sha256": "d9a8564b6bcabd8eb3a5778623dca0b403bb04bdd42d9b9def8a4af6d8e48632",
+    "r002_sha256": "5d6048149c61c296e2e12e9b4d77213c868747395d107580374c338a4baad77e",
+    "formal_campaign_found": false,
+    "online_result_found": false
+  },
+  "blockers": [
+    "the current StateAxis candidate integration record does not bind the checked-out owned runtime trees, so a current immutable HyStateBench plan cannot be produced",
+    "the formal TP4PP1 campaign requires physical NPU4-7, while this container exposes only physical NPU4-5",
+    "the frozen provider requires an identity-qualified runtime image launched through sudo docker, but neither sudo nor docker is available in this container",
+    "the only admitted four-device receipts are bound to obsolete dev15 identities and an expired authorization; no formal campaign output exists"
+  ],
+  "next_admissible_action": "publish a current integration record and matching immutable runtime images, then run the frozen three-pair HyStateBench campaign in a container exposing NPU4-7; do not downscale TP4 to the available two devices"
+}
